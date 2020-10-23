@@ -238,8 +238,8 @@ def get_time(event_token):
 			occurrances = dict.fromkeys(times, 0)
 			for start, end in timeList:
 				for t in times:
-					if start <= datetime.datetime.fromtimestamp(t) and \
-					   datetime.datetime.fromtimestamp(t) + datetime.timedelta(minutes=15) <= end:
+					if start <= datetime.datetime.fromtimestamp(t) + datetime.timedelta(hours=8) and \
+					   datetime.datetime.fromtimestamp(t) + datetime.timedelta(minutes=15) + datetime.timedelta(hours=8) <= end:
 					   occurrances[t] += 1
 			colors = {}
 			max_val = max(occurrances.values())
